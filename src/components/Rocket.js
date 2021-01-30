@@ -37,10 +37,15 @@ export default class Rocket extends Container {
     this.addChild(this._inner);
     this._createBody(textureName);
   }
-
+  /**
+   * @function
+   */
   ignite() {
     this._inner.fire.ignite();
   }
+  /**
+   * @function
+   */
   extinguish() {
     this._inner.fire.extinguish();
   }

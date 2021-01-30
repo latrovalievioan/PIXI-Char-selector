@@ -44,7 +44,9 @@ export default class ProgressBar extends Container {
   get background() {
     return this._background;
   }
-
+  /**
+   * @private
+   */
   _createBar() {
     this._bar = new Graphics();
     this._bar.beginFill(0x000000);
@@ -84,7 +86,10 @@ export default class ProgressBar extends Container {
     this._badge.addChild(text);
     this.addChild(this._badge);
   }
-
+  /**
+   * @private
+   * @readonly
+   */
   get bar() {
     return new Graphics();
   }
