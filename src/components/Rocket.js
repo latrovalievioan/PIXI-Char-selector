@@ -10,7 +10,10 @@ export default class Rocket extends Container {
    * @param {Number} acceleration - The value which determines the acceleration of the rocket
    * @param {Number} handling - The value which determines the handling of the rocket
    */
-  constructor({ name = "rocket", textureName, speed, acceleration, handling }) {
+  constructor(
+    { name = "rocket", textureName, speed, acceleration, handling },
+    params
+  ) {
     super();
 
     this.name = name;
@@ -19,9 +22,18 @@ export default class Rocket extends Container {
     this._acceleration = acceleration;
     this._handling = handling;
 
+    this._fire = new Fire();
+    console.log(params);
+    this._fire.x = params.fireX;
+    this._fire.y = params.fireY;
+    this._fire.rotation = params.fireRot;
+    this._fire.scale.x = params.fireScale;
+    this._fire.scale.y = params.fireScale;
+
     this._inner = new Container();
     this._inner.name = "rocket-inner";
-    this._inner.fire = this.fire;
+    this._inner.fire = this._fire;
+    this._inner.addChild(this._fire);
     this.addChild(this._inner);
     this._createBody(textureName);
   }
@@ -84,10 +96,6 @@ export default class Rocket extends Container {
    */
   get speed() {
     return this._speed;
-  }
-
-  get fire() {
-    return new Fire();
   }
 
   /**

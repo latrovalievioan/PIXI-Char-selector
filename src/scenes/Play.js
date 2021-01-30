@@ -63,7 +63,6 @@ export default class Play extends Scene {
     const rocket = this._rockets[index];
     rocket.show();
     rocket.y = -150;
-    rocket.ignite();
     this.addChild(rocket);
 
     this._stats.set({
