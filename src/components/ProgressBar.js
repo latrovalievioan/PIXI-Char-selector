@@ -84,4 +84,8 @@ export default class ProgressBar extends Container {
     this._badge.addChild(text);
     this.addChild(this._badge);
   }
+
+  get bar() {
+    return new Graphics();
+  }
 }
