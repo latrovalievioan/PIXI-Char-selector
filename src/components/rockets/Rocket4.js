@@ -5,9 +5,9 @@ export default class Rocket4 extends Rocket {
     super(
       {
         textureName: "rocket4",
-        acceleration: 30,
-        handling: 5,
-        speed: 70,
+        acceleration: 20,
+        handling: 50,
+        speed: 10,
         name: "rocket-4",
       },
       { fireX: 100, fireY: 150, fireRot: 4.6, fireScale: 0.4 }
